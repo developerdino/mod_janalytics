@@ -7,6 +7,9 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 </script>
 <script type="text/javascript">
 var pageTracker = _gat._getTracker("<?php echo $analyticsId; ?>");
+<?php if ($analyticsSubdomainTracking != "example.com" && !empty($analyticsSubdomainTracking)) { ?>
+pageTracker._setDomainName("<?php echo $analyticsSubdomainTracking; ?>");
+<?php } ?>
 pageTracker._initData();
 pageTracker._trackPageview();
 </script>

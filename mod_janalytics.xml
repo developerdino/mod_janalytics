@@ -23,5 +23,6 @@
             <option value="urchin">PARAMANALYTICSURCHIN</option>
         </param>
         <param name="analyticsId" type="text" default="UA-000000-0" label="TITLEANALYTICSID" description="PARAMANALYTICSID" />
+        <param name="analyticsSubdomainTracking" type="text" default="example.com" label="TITLEANALYTICSSUBDOMAINTRACKING" description="PARAMANALYTICSSUBDOMAINTRACKING" />
     </params>
 </install>
