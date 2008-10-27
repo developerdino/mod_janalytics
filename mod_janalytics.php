@@ -2,7 +2,7 @@
 /**
  * J!Analytics - Google Analytics Code module for Joomla v1.5
  *
- * @version		V1.0.0
+ * @version		V1.2.0
  * @author		Dean Tedesco <dino@tedesco.net.au>
  * @link		http://www.tedesco.net.au
  * @copyright 	Copyright (C) 2008 Dean Tedesco. All rights reserved.
@@ -29,6 +29,7 @@ defined('_JEXEC') or die('Restricted access');
 $analyticsCode = $params->get('analyticsCode', 'ga');
 $analyticsId = $params->get('analyticsId', 'UA-000000-0');
 $analyticsSubdomainTracking = $params->get('analyticsSubdomainTracking', 'example.com');
+$analyticsGatFix = $params->get('analyticsGatFix', 'off');
 
 if ($analyticsId != 'UA-000000-0')
 {

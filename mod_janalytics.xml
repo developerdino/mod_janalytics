@@ -8,7 +8,7 @@
 	<creationDate>March 2008</creationDate>
 	<copyright>Copyright (C) 2008 Dean Tedesco. All rights reserved.</copyright>
 	<license>GNU/GPL</license>
-	<version>1.0.0</version>
+	<version>1.2.0</version>
 	<description>Inserts Google Analytics code into your site.</description>
 	<files>
 		<filename module="mod_janalytics">mod_janalytics.php</filename>
@@ -24,5 +24,9 @@
         </param>
         <param name="analyticsId" type="text" default="UA-000000-0" label="TITLEANALYTICSID" description="PARAMANALYTICSID" />
         <param name="analyticsSubdomainTracking" type="text" default="example.com" label="TITLEANALYTICSSUBDOMAINTRACKING" description="PARAMANALYTICSSUBDOMAINTRACKING" />
+        <param name="analyticsGatFix" type="radio" default="off" label="TITLEANALYTICSGATFIX" description="PARAMANALYTICSGATFIX">
+            <option value="off">PARAMOFF</option>
+            <option value="on">PARAMON</option>
+        </param>
     </params>
 </install>
