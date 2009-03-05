@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="J!Analytics" default="copy_all" basedir=".">
+        <property name="src"   value="."/>
+        <property name="test"  value="../../joomla_1.5.9_test/modules/mod_janalytics" />
+        <!-- Fileset for all files -->
+    	<fileset dir="." id="allfiles">
+        	<include name="languages/*.*" />
+        	<include name="tmpl/*.*" />
+        	<include name="*.php" />
+        	<include name="*.xml" />
+        	<include name="*.html" />
+        	<include name="gpl.txt" />
+    	</fileset>
+        <target name="copy_all" description="Copies files to test project.">
+            <echo message="Running build.xml. Copying files from dev to test..." />
+            <copy file="${src}/mod_janalytics.php" todir="${test}"/>
+            <copy file="${src}/mod_janalytics.xml" todir="${test}"/>
+            <copy file="${src}/tmpl/ga.php" todir="${test}/tmpl"/>
+            <copy file="${src}/tmpl/urchin.php" todir="${test}/tmpl"/>
+            <copy file="${src}/tmpl/index.html" todir="${test}/tmpl"/>
+            <copy file="${src}/languages/en-GB.mod_janalytics.ini" todir="${test}/language/en-GB"/>
+ 
+        	<echo msg="Creating archive..." />
+        	<delete file="mod_janalytics.tar.gz" quiet="true" />
+	        <tar destfile="mod_janalytics.tar.gz" compression="gzip">
+            	<fileset refid="allfiles" />
+	        </tar>
+	        <echo msg="Files copied and archive file created OK!" />
+        </target>
+</project>
