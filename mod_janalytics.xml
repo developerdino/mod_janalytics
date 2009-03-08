@@ -16,7 +16,10 @@
 	</files>
 	<languages folder="languages">
 		<language tag="en-GB">en-GB.mod_janalytics.ini</language>
+		<language tag="de-DE">de-DE.mod_janalytics.ini</language>
 		<language tag="es-ES">es-ES.mod_janalytics.ini</language>
+		<language tag="pt-BR">pt-BR.mod_janalytics.ini</language>
+		<language tag="pt-PT">pt-PT.mod_janalytics.ini</language>
 	</languages>
 	<media></media>
     <params>
