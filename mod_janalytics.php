@@ -29,7 +29,7 @@ defined('_JEXEC') or die('Restricted access');
 $analyticsCode = $params->get('analyticsCode', 'ga');
 $analyticsId = $params->get('analyticsId', 'UA-000000-0');
 $analyticsSubdomainTracking = $params->get('analyticsSubdomainTracking', 'example.com');
-$analyticsGatFix = $params->get('analyticsGatFix', 'off');
+$analyticsTrackFiles = $params->get('analyticsTrackFiles', 'off');
 
 if ($analyticsId != 'UA-000000-0')
 {

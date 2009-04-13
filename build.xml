@@ -6,6 +6,7 @@
         <property name="test_lang"  value="../../joomla_1.5.9_test/language" />
         <!-- Fileset for all files -->
     	<fileset dir="." id="allfiles">
+    		<include name="assets/*.*" />
         	<include name="languages/*.*" />
         	<include name="tmpl/*.*" />
         	<include name="*.php" />
@@ -17,6 +18,7 @@
             <echo message="Running build.xml. Copying files from dev to test..." />
             <copy file="${src}/mod_janalytics.php" todir="${test_mod}"/>
             <copy file="${src}/mod_janalytics.xml" todir="${test_mod}"/>
+            <copy file="${src}/assets/taglinks.js" todir="${test_mod}/assets"/>
             <copy file="${src}/tmpl/ga.php" todir="${test_mod}/tmpl"/>
             <copy file="${src}/tmpl/urchin.php" todir="${test_mod}/tmpl"/>
             <copy file="${src}/tmpl/index.html" todir="${test_mod}/tmpl"/>

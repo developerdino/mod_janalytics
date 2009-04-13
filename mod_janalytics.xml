@@ -13,6 +13,7 @@
 	<files>
 		<filename module="mod_janalytics">mod_janalytics.php</filename>
 		<folder>tmpl</folder>
+		<folder>assets</folder>
 	</files>
 	<languages folder="languages">
 		<language tag="en-GB">en-GB.mod_janalytics.ini</language>
@@ -29,5 +30,9 @@
         </param>
         <param name="analyticsId" type="text" default="UA-000000-0" label="TITLEANALYTICSID" description="PARAMANALYTICSID" />
         <param name="analyticsSubdomainTracking" type="text" default="example.com" label="TITLEANALYTICSSUBDOMAINTRACKING" description="PARAMANALYTICSSUBDOMAINTRACKING" />
+        <param name="analyticsTrackFiles" type="radio" default="off" label="TITLEANALYTICSTRACKFILES" description="PARAMANALYTICSFILES">
+            <option value="on">PARAMANALYTICSON</option>
+            <option value="off">PARAMANALYTICSOFF</option>
+        </param>
     </params>
 </install>
