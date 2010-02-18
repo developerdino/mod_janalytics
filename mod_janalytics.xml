@@ -18,17 +18,19 @@
 		<language tag="en-GB">en-GB.mod_janalytics.ini</language>
 		<language tag="de-DE">de-DE.mod_janalytics.ini</language>
 		<language tag="es-ES">es-ES.mod_janalytics.ini</language>
+		<language tag="fr-FR">fr-FR.mod_janalytics.ini</language>
+		<language tag="it-IT">it-IT.mod_janalytics.ini</language>
 		<language tag="pt-BR">pt-BR.mod_janalytics.ini</language>
 		<language tag="pt-PT">pt-PT.mod_janalytics.ini</language>
 	</languages>
 	<media></media>
     <params>
-        <param name="analyticsCode" type="radio" default="ga" label="TITLEANALYTICSCODE" description="PARAMANALYTICSCODE">
-            <option value="ga">PARAMANALYTICSGA</option>
-            <option value="urchin">PARAMANALYTICSURCHIN</option>
+        <param name="analyticsDomains" type="radio" default="single" label="TITLEANALYTICSDOMAINS" description="PARAMANALYTICSDOMAINS">
+            <option value="single">PARAMANALYTICSSINGLE</option>
+            <option value="multiple">PARAMANALYTICSMULTIPLE</option>
         </param>
         <param name="analyticsId" type="text" default="UA-000000-0" label="TITLEANALYTICSID" description="PARAMANALYTICSID" />
-        <param name="analyticsSubdomainTracking" type="text" default="example.com" label="TITLEANALYTICSSUBDOMAINTRACKING" description="PARAMANALYTICSSUBDOMAINTRACKING" />
+        <param name="analyticsSubdomainTracking" type="text" default=".example.com" label="TITLEANALYTICSSUBDOMAINTRACKING" description="PARAMANALYTICSSUBDOMAINTRACKING" />
         <param name="analyticsTrackFiles" type="radio" default="off" label="TITLEANALYTICSTRACKFILES" description="PARAMANALYTICSFILES">
             <option value="on">PARAMANALYTICSON</option>
             <option value="off">PARAMANALYTICSOFF</option>

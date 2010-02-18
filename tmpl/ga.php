@@ -8,17 +8,17 @@
  * @copyright 	Copyright (C) 2008 Dean Tedesco. All rights reserved.
  * @license 	http://www.gnu.org/copyleft/gpl.html GNU/GPL
  * This file is part of J!Analytics.
- * 
+ *
  * J!Analytics is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * J!Analytics is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with J!Analytics.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -28,7 +28,7 @@ defined('_JEXEC') or die('Restricted access');
 <?php if ($analyticsTrackFiles == "on") { ?>
 <script type="text/javascript">
 //Javascript to tag file downloads and external links in Google Analytics
-//To use, place reference to this file should be placed at the bottom of all pages, 
+//To use, place reference to this file should be placed at the bottom of all pages,
 //just above the Google Analytics tracking code.
 //All outbound links and links to non-html files should now be automatically tracked.
 //
@@ -38,7 +38,7 @@ defined('_JEXEC') or die('Restricted access');
 //
 //Updated by:		Niamh Phelan niamh.phelan@iqcontent.com
 //On:				22-Jul-2008
-//For:			Upgrade to ga.js	
+//For:			Upgrade to ga.js
 //
 //Updated by:		Peter McKenna peter.mckenna@iqcontent.com
 //On:				07-Nov-2008
@@ -47,7 +47,7 @@ defined('_JEXEC') or die('Restricted access');
 //
 //Updated by:		Peter McKenna peter.mckenna@iqcontent.com
 //On:				19-Feb-2009
-//For:			Fixed up some problems with how Internet 
+//For:			Fixed up some problems with how Internet
 //				Explorer 6 was tracking links, and some minor
 //				Firefox issues.
 //
@@ -66,19 +66,19 @@ for (var l = 0; l < hrefs.length; l++) {
 		var link_location = String(hrefs[l]);
 
 		// Check if it's a mail link
-		if (link_location.match(/^mailto:/i)) 
+		if (link_location.match(/^mailto:/i))
 		{
 			addmailtotrackerlistener(hrefs[l]);
 		}
 		// Check to see if the link is an internal link
-		else if (location.host == hrefs[l].hostname) 
+		else if (location.host == hrefs[l].hostname)
 		{
-			if(link_path.match(/\.(doc|pdf|xls|ppt|zip|txt|vsd|vxd|js|css|rar|exe|wma|mov|avi|wmv|mp3|tar|gz)$/)) 
+			if(link_path.match(/\.(doc|pdf|xls|ppt|zip|txt|vsd|vxd|js|css|rar|exe|wma|mov|avi|wmv|mp3|tar|gz)$/))
 			{
 				addtrackerlistener(hrefs[l]);
 			}
 		}
-		else 
+		else
 		{
 			addtrackerlistener(hrefs[l]);
 		}
@@ -118,7 +118,7 @@ if (location.host != destination_host){
 }
 // Track an internal link
 else {
-	file_path = ((array_element.srcElement) ? "/" + array_element.srcElement.pathname : this.pathname);	
+	file_path = ((array_element.srcElement) ? "/" + array_element.srcElement.pathname : this.pathname);
 	var file_details = file_path.split('/');
 	file_path = cleanURL(window.location, true) + '/' + file_details[(file_details.length-1)];
 	file_path =  (("/virtual/download/") + file_path);
@@ -158,8 +158,12 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 <script type="text/javascript">
 try {
 var pageTracker = _gat._getTracker("<?php echo $analyticsId; ?>");
-<?php if ($analyticsSubdomainTracking != "example.com" && !empty($analyticsSubdomainTracking)) { ?>
+<?php if ($analyticsSubdomainTracking != ".example.com" && !empty($analyticsSubdomainTracking) && $analyticsDomains == "single") { ?>
 pageTracker._setDomainName("<?php echo $analyticsSubdomainTracking; ?>");
+<?php } ?>
+<?php if ($analyticsDomains == "multiple") { ?>
+pageTracker._setDomainName("none");
+pageTracker._setAllowLinker(true);
 <?php } ?>
 pageTracker._trackPageview();
 } catch(err) {}</script>

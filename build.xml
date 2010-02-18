@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="J!Analytics" default="copy_all" basedir=".">
+<project name="J!Analytics" default="copyfiles" basedir=".">
 		<property name="version" value="1.4.0" />
         <property name="src"   value="."/>
-        <property name="test_mod"  value="../../joomla_1.5.9_test/modules/mod_janalytics" />
-        <property name="test_lang"  value="../../joomla_1.5.9_test/language" />
-        <!-- Fileset for all files -->
-    	<fileset dir="." id="allfiles">
-        	<include name="languages/*.*" />
-        	<include name="tmpl/*.*" />
-        	<include name="*.php" />
-        	<include name="mod_janalytics.xml" />
-        	<include name="*.html" />
-        	<include name="gpl.txt" />
-    	</fileset>
-        <target name="copy_all" description="Copies files to test project.">
+        <property name="test_mod"  value="C:/xampp/htdocs/joomla_test/modules/mod_janalytics" />
+        <property name="test_lang"  value="C:/xampp/htdocs/joomla_test/language" />
+        <target name="copyfiles" description="Copies files to test project.">
             <echo message="Running build.xml. Copying files from dev to test..." />
             <copy file="${src}/mod_janalytics.php" todir="${test_mod}"/>
             <copy file="${src}/mod_janalytics.xml" todir="${test_mod}"/>
@@ -21,16 +12,22 @@
             <copy file="${src}/tmpl/urchin.php" todir="${test_mod}/tmpl"/>
             <copy file="${src}/tmpl/index.html" todir="${test_mod}/tmpl"/>
             <copy file="${src}/languages/en-GB.mod_janalytics.ini" todir="${test_lang}/en-GB"/>
- 
-        	<echo msg="Creating archive..." />
-        	<delete file="mod_janalytics-${version}.tar.gz" quiet="true" />
-	        <tar destfile="mod_janalytics-${version}.tar.gz" compression="gzip">
-            	<fileset refid="allfiles" />
-	        </tar>
-        	<delete file="mod_janalytics-${version}.zip" quiet="true" />
-	        <zip destfile="mod_janalytics-${version}.zip">
-				<fileset refid="allfiles" />
-			</zip>
-	        <echo msg="Files copied and archive file created OK!" />
         </target>
+		<target name="tarball" description="Create Tarball distribution package.">
+			<echo message="Creating Tarball archive..." />
+			<tar destfile="mod_janalytics-${version}.tar.gz"
+				compression="gzip"
+				basedir="."
+			    excludes=".project, build.xml, mod_janalytics-${version}.*"
+			/>
+			<echo message="Tarball created." />
+		</target>
+		<target name="zipfile" description="Create Zip distribution package.">
+			<echo message="Creating Zip archive..." />
+			<zip destfile="mod_janalytics-${version}.zip"
+				basedir="."
+			    excludes=".project, build.xml, mod_janalytics-${version}.*"
+			/>
+			<echo message="Zip created." />
+		</target>
 </project>
