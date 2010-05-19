@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="J!Analytics" default="copyfiles" basedir=".">
-		<property name="version" value="1.4.0" />
+<project name="Kingfish Media Analyics" default="copyfiles" basedir=".">
+		<property name="version" value="2.0.0" />
         <property name="src"   value="."/>
-        <property name="test_mod"  value="C:/xampp/htdocs/joomla_test/modules/mod_janalytics" />
-        <property name="test_lang"  value="C:/xampp/htdocs/joomla_test/language" />
+        <property name="test_mod"  value="C:/wamp/www/joomla_test/modules/mod_kmanalytics" />
+        <property name="test_lang"  value="C:/wamp/www/joomla_test/language" />
         <target name="copyfiles" description="Copies files to test project.">
             <echo message="Running build.xml. Copying files from dev to test..." />
-            <copy file="${src}/mod_janalytics.php" todir="${test_mod}"/>
-            <copy file="${src}/mod_janalytics.xml" todir="${test_mod}"/>
-            <copy file="${src}/tmpl/ga.php" todir="${test_mod}/tmpl"/>
-            <copy file="${src}/tmpl/urchin.php" todir="${test_mod}/tmpl"/>
+            <copy file="${src}/mod_kmanalytics.php" todir="${test_mod}"/>
+            <copy file="${src}/mod_kmanalytics.xml" todir="${test_mod}"/>
+            <copy file="${src}/tmpl/default.php" todir="${test_mod}/tmpl"/>
             <copy file="${src}/tmpl/index.html" todir="${test_mod}/tmpl"/>
-            <copy file="${src}/languages/en-GB.mod_janalytics.ini" todir="${test_lang}/en-GB"/>
+            <copy file="${src}/languages/en-GB.mod_kmanalytics.ini" todir="${test_lang}/en-GB"/>
         </target>
+		<target name="removefiles" description="Remove files in test project.">
+			<echo message="Running build.xml. Remove files from test..." />
+			<delete dir="${test_mod}"/>
+			<delete file="${test_lang}/en-GB/en-GB.mod_kmanalytics.ini" />
+		</target>
 		<target name="tarball" description="Create Tarball distribution package.">
 			<echo message="Creating Tarball archive..." />
-			<tar destfile="mod_janalytics-${version}.tar.gz"
+			<tar destfile="../mod_kmanalytics-${version}.tar.gz"
 				compression="gzip"
 				basedir="."
-			    excludes=".project, build.xml, mod_janalytics-${version}.*"
+			    excludes=".project, build.xml, mod_kmanalytics-${version}.*"
 			/>
 			<echo message="Tarball created." />
 		</target>
 		<target name="zipfile" description="Create Zip distribution package.">
 			<echo message="Creating Zip archive..." />
-			<zip destfile="mod_janalytics-${version}.zip"
+			<zip destfile="../mod_kmanalytics-${version}.zip"
 				basedir="."
-			    excludes=".project, build.xml, mod_janalytics-${version}.*"
+			    excludes=".project, build.xml, mod_kmanalytics-${version}.*"
 			/>
 			<echo message="Zip created." />
 		</target>
