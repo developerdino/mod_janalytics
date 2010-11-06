@@ -26,9 +26,9 @@
             <option value="multitop">OPTION_TRACKING_MULTITOP</option>
         </param>
         <param name="domain" type="text" default=".tedesco.net.au" label="TITLE_DOMAIN" description="DESC_DOMAIN" />
-        <param name="anonymizeip" type="radio" default="off" label="TITLE_ANONYMIZE_IP" description="DESC_ANONYMIZE_IP.">
-            <option value="on">ON</option>
-            <option value="off">OFF</option>
+        <param name="anonymizeip" type="radio" default="off" label="TITLE_ANONYMIZE_IP" description="DESC_ANONYMIZE_IP">
+            <option value="on">J_ON</option>
+            <option value="off">J_OFF</option>
         </param>
     </params>
 </install>

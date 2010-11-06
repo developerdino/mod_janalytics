@@ -34,4 +34,31 @@
             />
             <echo message="Zip created." />
         </target>
+        <target name="fixperms" description="Fix project file permissions">
+            <echo message="Fixing file owner and permissions..." />
+            <echo message=" - Setting owner to www-data for all files and directories..." />
+            <chown owner="www-data" type="both">
+                <fileset dir="${test_mod}">
+                    <include name="**" />
+                </fileset>
+            </chown>
+            <echo message=" - Setting group to www-data for all files and directories..." />
+            <chgrp group="www-data" type="both">
+                <fileset dir="${test_mod}">
+                    <include name="**" />
+                </fileset>
+            </chgrp>
+            <echo message=" - Setting permissions to 664 for all files..." />
+            <chmod perm="664" type="file">
+                <fileset dir="${test_mod}">
+                    <include name="**/*.*" />
+                </fileset>
+            </chmod>
+            <echo message=" - Setting permissions to 775 for all directories..." />
+            <chmod perm="775" type="dir">
+                <dirset dir="${test_mod}">
+                    <include name="**" />
+                </dirset>
+            </chmod>
+        </target>
 </project>
