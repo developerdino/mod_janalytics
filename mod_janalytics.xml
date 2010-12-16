@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE install SYSTEM "http://www.joomla.org/xml/dtd/1.5/module-install.dtd">
-<install version="1.5" type="module" client="site">
+<extension type="module" version="1.6.0" client="site" method="upgrade">
     <name>J!Analytics</name>
-    <creationDate>May 2010</creationDate>
     <author>Dean Tedesco</author>
+    <creationDate>December 2010</creationDate>
+    <copyright>Copyright (C) 2008 - 2011 Dean Tedesco. All rights reserved.</copyright>
+    <license>GNU General Public License version 3 or later; see gpl.txt</license>
     <authorEmail>dino@tedesco.net.au</authorEmail>
     <authorUrl>http://janalytics.tedesco.net.au/</authorUrl>
-    <copyright>Copyright (C) 2010 Dean Tedesco. All rights reserved.</copyright>
-    <license>GNU/GPL</license>
     <version>2.0.0</version>
-    <description>JANALYTICS_DESC</description>
+    <description>MOD_JANALYTICS_XML_DESCRIPTION</description>
     <files>
         <filename module="mod_janalytics">mod_janalytics.php</filename>
+        <filename>index.html</filename>
         <folder>tmpl</folder>
     </files>
-    <languages folder="languages">
-        <language tag="en-GB">en-GB.mod_janalytics.ini</language>
+    <languages>
+        <language tag="en-GB">languages/en-GB.mod_janalytics.ini</language>
     </languages>
-    <media></media>
-    <params>
-        <param name="gaid" type="text" default="" label="TITLE_ID" description="DESC_ID" />
-        <param name="tracking" type="radio" default="single" label="TITLE_TRACKING" description="DESC_TRACKING">
-            <option value="single">OPTION_TRACKING_SINGLE</option>
-            <option value="multisub">OPTION_TRACKING_MULTISUB</option>
-            <option value="multitop">OPTION_TRACKING_MULTITOP</option>
-        </param>
-        <param name="domain" type="text" default=".tedesco.net.au" label="TITLE_DOMAIN" description="DESC_DOMAIN" />
-        <param name="anonymizeip" type="radio" default="off" label="TITLE_ANONYMIZE_IP" description="DESC_ANONYMIZE_IP">
-            <option value="on">J_ON</option>
-            <option value="off">J_OFF</option>
-        </param>
-    </params>
-</install>
+    <help key="JHELP_EXTENSIONS_MODULE_MANAGER_JANALYTICS" />
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="gaid" type="text" default="" label="MOD_JANALYTICS_FIELD_ID_LABEL" description="MOD_JANALYTICS_FIELD_ID_DESC" />
+                <field name="tracking" type="radio" default="single" label="MOD_JANALYTICS_FIELD_TRACKING_LABEL" description="MOD_JANALYTICS_FIELD_TRACKING_DESC">
+                    <option value="single">MOD_JANALYTICS_FIELD_TRACKING_SINGLE_OPTION</option>
+                    <option value="multisub">MOD_JANALYTICS_FIELD_TRACKING_MULTISUB_OPTION</option>
+                    <option value="multitop">MOD_JANALYTICS_FIELD_TRACKING_MULTITOP_OPTION</option>
+                </field>
+                <field name="domain" type="text" default=".tedesco.net.au" label="MOD_JANALYTICS_FIELD_DOMAIN_LABEL" description="MOD_JANALYTICS_FIELD_DOMAIN_DESC" />
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="anonymizeip" type="radio" default="off" label="MOD_JANALYTICS_FIELD_ANONYMIZE_IP_LABEL" description="MOD_JANALYTICS_FIELD_ANONYMIZE_IP_DESC">
+                    <option value="on">JYES</option>
+                    <option value="off">JNO</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
