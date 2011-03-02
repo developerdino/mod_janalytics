@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="J!Analyics" default="copyfiles" basedir=".">
-        <property name="version" value="2.0.0" />
+        <property name="version" value="3.0.0" />
         <property name="src"   value="."/>
         <property name="test_mod"  value="/var/www/test/modules/mod_janalytics" />
         <property name="test_lang"  value="/var/www/test/language" />
@@ -17,7 +17,7 @@
             <delete dir="${test_mod}"/>
             <delete file="${test_lang}/en-GB/en-GB.mod_janalytics.ini" />
         </target>
-        <target name="tarball" description="Create Tarball distribution package.">
+        <target name="tar" description="Create Tarball distribution package.">
             <echo message="Creating Tarball archive..." />
             <tar destfile="../mod_janalytics-${version}.tar.gz"
                 compression="gzip"
@@ -26,7 +26,7 @@
             />
             <echo message="Tarball created." />
         </target>
-        <target name="zipfile" description="Create Zip distribution package.">
+        <target name="zip" description="Create Zip distribution package.">
             <echo message="Creating Zip archive..." />
             <zip destfile="../mod_janalytics-${version}.zip"
                 basedir="."

@@ -1,8 +1,8 @@
 <?php
 /**
- * J!Analytics - Google Analytics Code module for Joomla v1.5
+ * J!Analytics - Google Analytics Code module for Joomla v1.6
  *
- * @version     $Id: mod_janalytics.php -1   $
+ * @version     $Id:$
  * @author      Dean Tedesco <dino@tedesco.net.au>
  * @link        http://janalytics.tedesco.net.au
  * @copyright   Copyright (C) 2010 Dean Tedesco. All rights reserved.

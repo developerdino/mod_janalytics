@@ -1,6 +1,6 @@
 <?php
 /**
- * J!Analytics - Google Analytics Code module for Joomla v1.5
+ * J!Analytics - Google Analytics Code module for Joomla v1.6
  *
  * @version     $Id$
  * @author      Dean Tedesco <dino@tedesco.net.au>
