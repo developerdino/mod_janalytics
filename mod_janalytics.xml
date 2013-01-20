@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="1.6.0" client="site" method="upgrade">
+<extension type="module" version="3.0.0" client="site" method="upgrade">
     <name>mod_janalytics</name>
     <author>Dean Tedesco</author>
-    <creationDate>March 2011</creationDate>
+    <creationDate>January 2013</creationDate>
     <copyright>Copyright (C) 2008 - 2011 Dean Tedesco. All rights reserved.</copyright>
     <license>GNU General Public License version 3 or later; see gpl.txt</license>
     <authorEmail>dino@tedesco.net.au</authorEmail>
-    <authorUrl>http://janalytics.tedesco.net.au/</authorUrl>
+    <authorUrl>http://www.tedesco.net.au/joomla-analytics/</authorUrl>
     <version>3.0.0</version>
     <description>MOD_JANALYTICS_XML_DESCRIPTION</description>
     <files>
@@ -58,6 +58,17 @@
                     default="off" 
                     label="MOD_JANALYTICS_FIELD_ANONYMIZE_IP_LABEL" 
                     description="MOD_JANALYTICS_FIELD_ANONYMIZE_IP_DESC">
+                    <option 
+                        value="on">JON</option>
+                    <option 
+                        value="off">JOFF</option>
+                </field>
+                <field 
+                    name="enhancedlink" 
+                    type="radio" 
+                    default="off" 
+                    label="MOD_JANALYTICS_FIELD_ENHANCED_LINK_LABEL" 
+                    description="MOD_JANALYTICS_FIELD_ENHANCED_LINK_DESC">
                     <option 
                         value="on">JON</option>
                     <option 

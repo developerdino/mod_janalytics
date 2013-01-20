@@ -1,10 +1,9 @@
 <?php
 /**
- * J!Analytics - Google Analytics Code module for Joomla v1.6
+ * J!Analytics - Google Analytics Code module for Joomla v3.0
  *
- * @version     $Id$
  * @author      Dean Tedesco <dino@tedesco.net.au>
- * @link        http://janalytics.tedesco.net.au
+ * @link        http://www.tedesco.net.au
  * @copyright   Copyright (C) 2010 Dean Tedesco. All rights reserved.
  * @license     http://www.gnu.org/copyleft/gpl.html GNU/GPL
  *
@@ -31,6 +30,7 @@ $tracking = $params->get('tracking', 'single');
 $gaid = $params->get('gaid');
 $domain = $params->get('domain', '.tedesco.net.au');
 $anonymizeip = $params->get('anonymizeip', 'off');
+$enhancedlink = $params->get('enhancedlink', 'off');
 
 if (!empty($gaid))
 {

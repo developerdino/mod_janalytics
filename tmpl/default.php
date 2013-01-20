@@ -1,10 +1,9 @@
 <?php
 /**
- * J!Analytics - Google Analytics Code module for Joomla v1.6
+ * J!Analytics - Google Analytics Code module for Joomla v3.0
  *
- * @version     $Id:$
  * @author      Dean Tedesco <dino@tedesco.net.au>
- * @link        http://janalytics.tedesco.net.au
+ * @link        http://www.tedesco.net.au
  * @copyright   Copyright (C) 2010 Dean Tedesco. All rights reserved.
  * @license     http://www.gnu.org/copyleft/gpl.html GNU/GPL
  *
@@ -31,6 +30,11 @@ defined('_JEXEC') or die('Restricted access');
 <script type="text/javascript">
 
 var _gaq = _gaq || [];
+<?php if ($enhancedlink == 'on') : ?>
+var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+<?php endif; ?>
 _gaq.push(['_setAccount', '<?php echo $gaid; ?>']);
 <?php if ($tracking == 'multisub' || $tracking == 'multitop') : ?>
 _gaq.push(['_setDomainName', '<?php echo ($tracking == 'multisub') ? $domain : 'none'; ?>']);
